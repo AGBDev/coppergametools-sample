@@ -13,3 +13,4 @@ project.platform=$PLATFORM$
 
 project.externalres.dir=./Project/Data/
 project.externalres.out=./Project/
+

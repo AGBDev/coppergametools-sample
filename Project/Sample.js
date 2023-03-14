@@ -142,6 +142,11 @@ Engine.Event.RegistKeyDownEvent = function(funcString) {
 	ccbRegisterKeyDownEvent(funcString);
 };
 
+Save = {};
+
+Save.SaveGame = function () {
+  
+}
 const Console = Engine.Console;
 
 HandleArgs = function (args) {
@@ -152,7 +157,6 @@ HandleArgs = function (args) {
         break;
       case "--devmode":
         Engine.Common.CleanMemory();
-        //Engine.IO.File.WriteAllText("~content/temp_config.gcf", "dev=1");
         break;
     }
   }
@@ -160,8 +164,12 @@ HandleArgs = function (args) {
 
 Main = function (args) {
   Engine.Common.SetVariable("game_paused", "false");
-
   HandleArgs(args);
-  Console.Print("Starting");
+
+  Engine.Event.RegistFrameEvent(function(){
+    var num = 0;
+    Engine.IO.File.WriteAllText("Data/tmp_data_"+num, num * 234);
+    num++;
+  });
 };
 Main(ccbGetCopperCubeVariable('project.src.args').split(' '));
