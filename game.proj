@@ -3,6 +3,7 @@ VERSION=0.0.01BD
 PLATFORM=default
 
 project.name=$NAME$
+project.file=./Project/$NAME$.ccb
 project.src.dir=./Source/
 project.src.main=Main.js
 project.src.out=$NAME$
@@ -13,4 +14,3 @@ project.platform=$PLATFORM$
 
 project.externalres.dir=./Project/Data/
 project.externalres.out=./Project/
-
